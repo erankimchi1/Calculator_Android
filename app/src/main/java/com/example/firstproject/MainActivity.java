@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     TextView result;
     Button buttonOne;
-    int num1=0, num2=0;
+    double num1=0, num2=0;
     String sign = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         if (view instanceof Button){
             Button button = (Button) view;
             String str = button.getText().toString();
-            if (Integer.parseInt(result.getText().toString()) == 0)
+            if (Double.parseDouble(result.getText().toString()) == 0)
                 result.setText(str);
             else
                 result.append(str);
@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
     public void EqualFunction(View view) {
         if (view instanceof Button) {
             String temp2 = result.getText().toString();
-            num2 = Integer.parseInt(temp2);
-            int res=0;
+            num2 = Double.parseDouble(temp2);
+            double res = 0;
             switch (sign) {
                 case "+":
                     res = num1 + num2;
@@ -60,14 +60,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
             num1 = res;
-            result.setText((res)+"");
+            result.setText(res+"");
         }
     }
 
     public void PlusFunction(View view) {
         if (view instanceof Button){
             String temp1 = result.getText().toString();
-            num1 = Integer.parseInt(temp1);
+            num1 = Double.parseDouble(temp1);
             sign = "+";
             result.setText("0");
         }
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     public void MinusFunction(View view) {
         if (view instanceof Button) {
             String temp1 = result.getText().toString();
-            num1 = Integer.parseInt(temp1);
+            num1 = Double.parseDouble(temp1);
             sign = "-";
             result.setText("0");
         }
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     public void MulFunction(View view) {
         if (view instanceof Button) {
             String temp1 = result.getText().toString();
-            num1 = Integer.parseInt(temp1);
+            num1 = Double.parseDouble(temp1);
             sign = "X";
             result.setText("0");
         }
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
     public void DivideFunction(View view) {
         if (view instanceof Button) {
             String temp1 = result.getText().toString();
-            num1 = Integer.parseInt(temp1);
+            num1 = Double.parseDouble(temp1);
             sign = "/";
             result.setText("0");
         }
